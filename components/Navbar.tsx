@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ThemeToggle from '@/components/ThemeToggle';
 import { useState } from 'react';
 import logo from '../app/assets/Screenshot 2025-07-31 200100 (1).png';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,17 +24,19 @@ export default function Navbar() {
         <div className='flex items-center justify-between h-14 sm:h-16'>
           {/* Logo Section */}
           <div className='flex items-center'>
-            <Link
-              href='/'
-              className='flex items-center gap-2 sm:gap-3 flex-shrink-0 group transition-all duration-300 hover:scale-105'
-              onClick={closeMobileMenu}
-            >
-              <img
-                src={logo.src}
-                alt='ExpenseTracker AI Logo'
-                className='h-7 sm:h-8 md:h-10 w-auto'
-              />
-            </Link>
+          <Link
+  href='/'
+  className='flex items-center gap-2 sm:gap-3 flex-shrink-0 group transition-all duration-300 hover:scale-105'
+  onClick={closeMobileMenu}
+>
+  <Image
+    src={logo.src}
+    alt='ExpenseTracker AI Logo'
+    width={200} // Set the width of the image
+    height={200} // Set the height of the image
+    className='h-7 sm:h-8 md:h-12 w-auto'
+  />
+</Link>
           </div>
 
           {/* Desktop Navigation Links */}
