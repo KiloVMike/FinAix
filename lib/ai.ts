@@ -99,7 +99,9 @@ export async function generateExpenseInsights(
       cleanedResponse = cleanedResponse
         .replace(/^```\s*/, '')
         .replace(/\s*```$/, '');
+        
     }
+cleanedResponse = cleanedResponse.replace(/\$/g, '₹');
 
     // Parse AI response
     const insights = JSON.parse(cleanedResponse);
